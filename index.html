@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toned & Tanned | Pilates & Wellness Studio • Oxford, OH</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        magenta: {
+                            50: '#fff1f8',
+                            100: '#ffe4f3',
+                            500: '#e6007e',
+                            600: '#d0006e',
+                            700: '#b0005a',
+                        },
+                        sunset: {
+                            400: '#ff7e5f',
+                            500: '#ff6b4a',
+                            600: '#f05232',
+                        },
+                        peach: {
+                            100: '#ffeedd',
+                            200: '#ffd8be',
+                            300: '#ffc19e',
+                        },
+                        cream: '#fffaf5',
+                        warmgray: '#2c2226'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: white(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #e6007e 0%, #ff6b4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(255, 126, 95, 0.25), transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(230, 0, 126, 0.2), transparent 50%),
+                        #fffaf5;
+        }
+    </style>
+</head>
+<body class="bg-cream text-warmgray font-sans antialiased selection:bg-magenta-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-card transition-all duration-300 border-b border-rose-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-magenta-500 to-sunset-500 flex items-center justify-center text-white text-xl font-black shadow-lg shadow-magenta-500/30 group-hover:scale-105 transition-transform">
+                    T&T
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-extrabold text-2xl tracking-tight text-warmgray leading-none">toned <span class="gradient-text">&amp;</span> tanned</span>
+                    <span class="text-[10px] font-bold tracking-widest text-sunset-500 uppercase">Oxford, OH • Pilates &amp; Spa</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+                <a href="#about" class="hover:text-magenta-500 transition-colors">About Us</a>
+                <a href="#amenities" class="hover:text-magenta-500 transition-colors">Perks &amp; Amenities</a>
+                <a href="#classes" class="hover:text-magenta-500 transition-colors">Classes</a>
+                <a href="#pricing" class="hover:text-magenta-500 transition-colors">Pricing</a>
+                <a href="#calculator" class="hover:text-magenta-500 transition-colors">Value Calculator</a>
+                <a href="#faq" class="hover:text-magenta-500 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openModal()" class="bg-gradient-to-r from-magenta-500 to-sunset-500 text-white font-bold px-6 py-3 rounded-full shadow-lg shadow-magenta-500/25 hover:shadow-xl hover:shadow-magenta-500/40 hover:-translate-y-0.5 transition-all text-sm">
+                    Join for $75/mo <i class="fa-solid font-bold fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-warmgray focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream/95 backdrop-blur-lg border-b border-rose-100 px-6 py-6 space-y-4">
+            <a href="#about" class="block font-semibold text-lg hover:text-magenta-500">About Us</a>
+            <a href="#amenities" class="block font-semibold text-lg hover:text-magenta-500">Perks &amp; Amenities</a>
+            <a href="#classes" class="block font-semibold text-lg hover:text-magenta-500">Classes</a>
+            <a href="#pricing" class="block font-semibold text-lg hover:text-magenta-500">Pricing</a>
+            <a href="#calculator" class="block font-semibold text-lg hover:text-magenta-500">Value Calculator</a>
+            <a href="#faq" class="block font-semibold text-lg hover:text-magenta-500">FAQ</a>
+            <button onclick="openModal()" class="w-full bg-gradient-to-r from-magenta-500 to-sunset-500 text-white font-bold py-3 rounded-full shadow-lg text-center">
+                Join for $75/mo
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6 text-center md:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-magenta-50 border border-magenta-100 text-magenta-600 font-bold text-xs uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-magenta-500 animate-ping"></span>
+                    Oxford's Hot New Student Wellness Spot
+                </div>
+                
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-warmgray leading-[1.1]">
+                    Get <span class="gradient-text">Toned</span>.<br>Stay <span class="gradient-text">Tanned</span>.<br>Without the Price Tag.
+                </h1>
+
+                <p class="text-lg text-warmgray/80 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    Designed specifically for Oxford college students. Access daily Reformer Pilates classes, unlimited UV tanning, soothing HydroMassage, and infrared sauna—all for just <strong>$75/month</strong>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                    <button onclick="openModal()" class="w-full sm:w-auto bg-gradient-to-r from-magenta-500 to-sunset-500 text-white text-lg font-bold px-8 py-4 rounded-full shadow-xl shadow-magenta-500/30 hover:shadow-2xl hover:scale-105 transition-all text-center">
+                        Claim Your $75 Pass
+                    </button>
+                    <a href="#amenities" class="w-full sm:w-auto bg-white/80 hover:bg-white text-warmgray border border-rose-200 font-bold px-8 py-4 rounded-full text-center hover:shadow-md transition-all">
+                        Explore Perks <i class="fa-solid fa-arrow-down text-sunset-500 ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Oxford & Student Trust Badges -->
+                <div class="pt-6 border-t border-rose-200/60 flex items-center justify-center md:justify-start gap-6 text-xs font-semibold text-warmgray/70">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-magenta-500 text-base"></i>
+                        <span>Minutes from Miami University</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle text-sunset-500 text-base"></i>
+                        <span>1 Class Every 24 Hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Feature Visual Deck -->
+            <div class="relative z-10 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <!-- Main Card Preview -->
+                    <div class="bg-white rounded-3xl p-6 shadow-2xl border border-rose-100 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <div class="relative h-64 rounded-2xl overflow-hidden mb-6 bg-gradient-to-tr from-magenta-500/20 to-sunset-500/20 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Pilates Reformer Class in Oxford OH" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-warmgray/70 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-magenta-600">
+                                <i class="fa-solid fa-bolt mr-1"></i> 45-Min High Energy Reformer
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-warmgray">All-Inclusive Pass</h3>
+                                <p class="text-xs text-warmgray/60">1 Pilates Class/24hrs + Unlimited Spa</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-display text-3xl font-extrabold text-magenta-500">$75</span>
+                                <span class="text-xs text-warmgray/60 block">/month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Floating Badge 1 -->
+                    <div class="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-rose-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+                        <div class="w-10 h-10 rounded-full bg-sunset-400/20 text-sunset-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-sun text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-extrabold text-warmgray">Unlimited Tanning</p>
+                            <p class="text-[10px] text-warmgray/60">Free with membership</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Floating Badge 2 -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-rose-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-magenta-500/20 text-magenta-500 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-water text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-extrabold text-warmgray">HydroMassage &amp; Sauna</p>
+                            <p class="text-[10px] text-warmgray/60">Daily recovery access</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OXFORD VIBES / ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sunset-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">Built For Campus Life</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warmgray">
+                    Your Daily Reset Right in <span class="gradient-text">Uptown Oxford</span>
+                </h2>
+                <p class="mt-4 text-warmgray/70 leading-relaxed">
+                    Balancing exams, socials, and life at Miami University shouldn't mean sacrificing luxury wellness. We created <strong>Toned &amp; Tanned</strong> so you can sculpt, tan, and recharge between classes without breaking your college budget.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl bg-cream border border-rose-100 hover:border-magenta-500/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-magenta-500/10 text-magenta-500 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-warmgray">Student Friendly Budget</h3>
+                    <p class="text-sm text-warmgray/70 leading-relaxed">
+                        No sneaky add-on fees or $35 per-class studio prices. Pay just $75 per month for your entire fitness and glowing recovery routine.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl bg-cream border border-rose-100 hover:border-sunset-500/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-sunset-500/10 text-sunset-500 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-warmgray">1 Class Every 24 Hours</h3>
+                    <p class="text-sm text-warmgray/70 leading-relaxed">
+                        Book one high-intensity reformer class every day. Quick 45-minute sessions designed to fit right between your lectures and study groups.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl bg-cream border border-rose-100 hover:border-magenta-500/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-magenta-500/10 text-magenta-500 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-warmgray">All-In-One Glow Spa</h3>
+                    <p class="text-sm text-warmgray/70 leading-relaxed">
+                        Why pay for separate tanning or massage memberships? Pop into our UV beds, HydroMassage chairs, or infrared sauna whenever you need to de-stress.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES & FEATURES GRID -->
+    <section id="amenities" class="py-20 bg-gradient-to-b from-cream to-rose-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-magenta-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">All Included For $75/mo</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warmgray">The Ultimate Perk Lineup</h2>
+                </div>
+                <p class="text-warmgray/70 max-w-md mt-4 md:mt-0 text-sm">
+                    Everything you need to feel energized, strong, and bronzed for the weekend.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Perk 1 -->
+                <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-44 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Pilates Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-magenta-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">DAILY</span>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-warmgray mb-1">Pilates Reformers</h3>
+                    <p class="text-xs text-warmgray/70">Full-body core sculpt &amp; low-impact strength training using state-of-the-art reformers.</p>
+                </div>
+
+                <!-- Perk 2 -->
+                <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-44 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Tanning Bed Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-sunset-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">UNLIMITED</span>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-warmgray mb-1">Tanning Beds</h3>
+                    <p class="text-xs text-warmgray/70">High-level UV tanning beds with customized bronzing levels to keep your golden glow year-round.</p>
+                </div>
+
+                <!-- Perk 3 -->
+                <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-44 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="HydroMassage Bed" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-magenta-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">RECOVERY</span>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-warmgray mb-1">HydroMassage Beds</h3>
+                    <p class="text-xs text-warmgray/70">Targeted heated water massagers to relieve muscle tension and melt away academic stress.</p>
+                </div>
+
+                <!-- Perk 4 -->
+                <div class="bg-white rounded-3xl p-6 border border-rose-100 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-44 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Infrared Sauna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-sunset-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full">DETOX</span>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-warmgray mb-1">Infrared Sauna</h3>
+                    <p class="text-xs text-warmgray/70">Deep detox infrared sauna booths that enhance skin glow, boost circulation, and aid recovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE VALUE CALCULATOR -->
+    <section id="calculator" class="py-16 bg-gradient-to-r from-magenta-500 to-sunset-500 text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="bg-white/20 text-white font-extrabold text-xs px-3 py-1 rounded-full tracking-wider uppercase mb-4 inline-block">Interactive Student Savings</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold mb-4">See How Much You Save at Toned &amp; Tanned</h2>
+            <p class="text-white/80 max-w-xl mx-auto text-sm mb-8">
+                Typical Oxford boutique studios charge per session. Drag the slider to see what you'd spend elsewhere vs. your flat $75/mo rate!
+            </p>
+
+            <div class="bg-white text-warmgray rounded-3xl p-8 shadow-2xl max-w-2xl mx-auto">
+                <label for="classes-slider" class="block text-sm font-bold mb-2">How many Pilates classes &amp; spa visits do you want per week?</label>
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-xs font-bold">1/wk</span>
+                    <input id="classes-slider" type="range" min="1" max="7" value="4" class="w-full h-3 bg-rose-100 rounded-lg appearance-none cursor-pointer accent-magenta-500" oninput="calculateSavings(this.value)">
+                    <span class="text-xs font-bold">7/wk</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 border-t border-rose-100 pt-6">
+                    <div class="text-center border-r border-rose-100">
+                        <span class="text-xs text-warmgray/60 uppercase font-bold block">Other Studios</span>
+                        <span id="competitor-price" class="font-display text-3xl font-extrabold text-rose-400">$320</span>
+                        <span class="text-[10px] text-warmgray/50 block">/month estimate</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xs text-magenta-500 font-bold uppercase block">Toned &amp; Tanned</span>
+                        <span class="font-display text-3xl font-extrabold text-magenta-600">$75</span>
+                        <span class="text-[10px] text-magenta-500/70 block">/month fixed</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-magenta-50 rounded-2xl p-4 text-center">
+                    <p class="text-sm font-bold text-magenta-700">
+                        🎉 You Save Approx <span id="savings-amount" class="text-lg font-black">$245</span> Every Month!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLASS SCHEDULE SECTION -->
+    <section id="classes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-sunset-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">Designed for Oxford Schedules</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warmgray">Class Offerings &amp; Demo Booking</h2>
+                <p class="text-warmgray/70 text-sm mt-2">Reserve 1 slot every 24 hours directly from our app!</p>
+            </div>
+
+            <!-- Class Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="border border-rose-100 rounded-3xl p-6 bg-cream/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-magenta-100 text-magenta-600 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Signature</span>
+                            <span class="text-xs font-bold text-warmgray/60"><i class="fa-regular fa-clock"></i> 45 Mins</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-warmgray mb-2">Express Reformer Sculpt</h3>
+                        <p class="text-xs text-warmgray/70 leading-relaxed mb-4">Fast-paced, full-body core burn designed to get you in, worked out, and back to campus in under an hour.</p>
+                    </div>
+                    <button onclick="reserveClass('Express Reformer Sculpt')" class="w-full bg-warmgray text-white text-xs font-bold py-3 rounded-xl hover:bg-magenta-500 transition-colors">
+                        Reserve Spot Demo
+                    </button>
+                </div>
+
+                <div class="border border-rose-100 rounded-3xl p-6 bg-cream/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-sunset-100 text-sunset-600 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">High Energy</span>
+                            <span class="text-xs font-bold text-warmgray/60"><i class="fa-regular fa-clock"></i> 50 Mins</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-warmgray mb-2">Hot Pilates Beat-Drop</h3>
+                        <p class="text-xs text-warmgray/70 leading-relaxed mb-4">Infrared heated mat and reformer fusion synchronized to trending music hits. High sweat, low impact.</p>
+                    </div>
+                    <button onclick="reserveClass('Hot Pilates Beat-Drop')" class="w-full bg-warmgray text-white text-xs font-bold py-3 rounded-xl hover:bg-magenta-500 transition-colors">
+                        Reserve Spot Demo
+                    </button>
+                </div>
+
+                <div class="border border-rose-100 rounded-3xl p-6 bg-cream/50 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-peach-200 text-sunset-600 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Recovery</span>
+                            <span class="text-xs font-bold text-warmgray/60"><i class="fa-regular fa-clock"></i> 45 Mins</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-warmgray mb-2">Sunset Stretch &amp; Unwind</h3>
+                        <p class="text-xs text-warmgray/70 leading-relaxed mb-4">Deep muscular lengthening and restorative breathwork. Perfect for post-exam stress relief.</p>
+                    </div>
+                    <button onclick="reserveClass('Sunset Stretch &amp; Unwind')" class="w-full bg-warmgray text-white text-xs font-bold py-3 rounded-xl hover:bg-magenta-500 transition-colors">
+                        Reserve Spot Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Confirmation Alert Box -->
+            <div id="booking-alert" class="hidden max-w-xl mx-auto bg-green-50 border border-green-200 text-green-800 p-4 rounded-2xl text-center text-sm font-semibold transition-all">
+                <i class="fa-solid fa-circle-check text-green-500 mr-2"></i>
+                <span id="booking-alert-msg">Spot confirmed!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-20 bg-gradient-to-b from-rose-50/50 to-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-magenta-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">Simple &amp; Transparent</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warmgray">One Membership. All The Perks.</h2>
+                <p class="text-warmgray/70 text-sm mt-2">No locked contracts. Pause during summer breaks easily!</p>
+            </div>
+
+            <div class="max-w-md mx-auto relative">
+                <!-- Highlight Badge -->
+                <div class="absolute -top-5 inset-x-0 flex justify-center">
+                    <span class="bg-gradient-to-r from-magenta-500 to-sunset-500 text-white text-xs font-black px-6 py-2 rounded-full uppercase tracking-wider shadow-md">
+                        🔥 Most Popular Student Pass
+                    </span>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border-2 border-magenta-500/30 shadow-2xl relative">
+                    <div class="text-center mb-8 pt-2">
+                        <h3 class="font-display text-2xl font-extrabold text-warmgray">VIP Oxford All-Access</h3>
+                        <p class="text-xs text-warmgray/60 mt-1">Everything included in one student rate</p>
+                        <div class="mt-4 flex items-baseline justify-center gap-1">
+                            <span class="font-display text-5xl font-black text-warmgray">$75</span>
+                            <span class="text-warmgray/60 font-semibold text-sm">/ month</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 mb-8 text-sm font-medium text-warmgray/80">
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-magenta-100 text-magenta-500 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                            <span><strong>1 Reformer Class</strong> every 24 hours</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-magenta-100 text-magenta-500 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                            <span><strong>Unlimited UV Tanning Bed</strong> access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-magenta-100 text-magenta-500 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                            <span><strong>Daily HydroMassage Bed</strong> sessions</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-magenta-100 text-magenta-500 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                            <span><strong>Infrared Sauna detox</strong> lounge access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-magenta-100 text-magenta-500 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                            <span>Cancel or pause anytime with 1-click</span>
+                        </li>
+                    </ul>
+
+                    <button onclick="openModal()" class="w-full bg-gradient-to-r from-magenta-500 to-sunset-500 text-white font-bold py-4 rounded-full shadow-lg shadow-magenta-500/30 hover:scale-105 transition-all text-center">
+                        Lock In Your $75 Rate
+                    </button>
+                    <p class="text-[10px] text-center text-warmgray/50 mt-3"><i class="fa-solid fa-lock mr-1"></i> Student ID required upon first check-in.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sunset-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">Got Questions?</span>
+                <h2 class="font-display text-3xl font-extrabold text-warmgray">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-rose-100 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-warmgray flex justify-between items-center hover:bg-cream/50 transition-colors">
+                        <span>How does the 1 class every 24 hours rule work?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-magenta-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden px-6 pb-6 text-sm text-warmgray/70 leading-relaxed">
+                        To keep class sizes intimate and fair for all Miami University students, your membership lets you reserve up to one Pilates class every 24 hours. Once your class finishes, you can immediately book for the next day!
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-rose-100 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-warmgray flex justify-between items-center hover:bg-cream/50 transition-colors">
+                        <span>Is tanning really included for free?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-magenta-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden px-6 pb-6 text-sm text-warmgray/70 leading-relaxed">
+                        Yes! Unlimited tanning bed sessions are fully included with your $75 monthly pass. You can drop in for a tanning session even on days you don't take a Pilates class.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-rose-100 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-warmgray flex justify-between items-center hover:bg-cream/50 transition-colors">
+                        <span>Can I pause my membership during summer break?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-magenta-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden px-6 pb-6 text-sm text-warmgray/70 leading-relaxed">
+                        Absolutely! We know students travel home or work internships over the summer. You can freeze or pause your subscription at zero charge through our app anytime.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT SECTION -->
+    <section class="py-20 bg-cream border-t border-rose-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-magenta-500 font-extrabold text-xs tracking-widest uppercase mb-2 block">Visit Us in Oxford</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warmgray mb-4">Minutes From High Street &amp; Campus</h2>
+                <p class="text-warmgray/70 text-sm mb-6 leading-relaxed">
+                    We are located right in Uptown Oxford, OH—an easy 5-minute walk from Miami University campus dorms and Greek housing.
+                </p>
+
+                <div class="space-y-4 text-sm font-semibold text-warmgray/80">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-magenta-100 text-magenta-500 flex items-center justify-center"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <p class="text-xs text-warmgray/50">Address</p>
+                            <p>110 E High St, Oxford, OH 45056</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-sunset-100 text-sunset-500 flex items-center justify-center"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <p class="text-xs text-warmgray/50">Hours</p>
+                            <p>Mon - Sun: 6:00 AM – 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Placeholder / Styled Box -->
+            <div class="bg-white p-6 rounded-3xl border border-rose-100 shadow-xl relative overflow-hidden text-center">
+                <div class="bg-rose-50 h-64 rounded-2xl flex flex-col items-center justify-center border border-dashed border-rose-200">
+                    <i class="fa-solid fa-map-location-dot text-4xl text-magenta-500 mb-2"></i>
+                    <p class="font-display font-bold text-warmgray">Uptown Oxford Studio Location</p>
+                    <p class="text-xs text-warmgray/60 mt-1">Right around the corner from Miami U!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warmgray text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-magenta-500 to-sunset-500 flex items-center justify-center text-white text-sm font-black">T&amp;T</div>
+                <span class="font-display font-bold text-lg">toned &amp; tanned</span>
+            </div>
+            <p class="text-xs text-white/50">&copy; 2026 Toned &amp; Tanned Oxford. All rights reserved. Created for Oxford, OH College Students.</p>
+            <div class="flex gap-4 text-white/70">
+                <a href="#" class="hover:text-magenta-400"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-magenta-400"><i class="fa-brands fa-tiktok text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP FOR SIGNUP -->
+    <div id="signup-modal" class="fixed inset-0 bg-warmgray/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative border border-rose-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-warmgray/50 hover:text-warmgray text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <span class="text-xs font-bold text-magenta-500 uppercase tracking-widest">Oxford Student Pass</span>
+                <h3 class="font-display text-2xl font-extrabold text-warmgray mt-1">Join Toned &amp; Tanned</h3>
+                <p class="text-xs text-warmgray/60 mt-1">$75/mo • 1 Class/24hrs • Free Tanning &amp; Spa</p>
+            </div>
+
+            <form onsubmit="handleSignup(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-warmgray mb-1">Full Name</label>
+                    <input type="text" required placeholder="Miami Student Name" class="w-full px-4 py-3 rounded-xl border border-rose-200 text-sm focus:outline-none focus:border-magenta-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-warmgray mb-1">Miami U Email (.edu)</label>
+                    <input type="email" required placeholder="uniqueid@miamioh.edu" class="w-full px-4 py-3 rounded-xl border border-rose-200 text-sm focus:outline-none focus:border-magenta-500">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-magenta-500 to-sunset-500 text-white font-bold py-3.5 rounded-xl shadow-lg hover:opacity-95 transition-opacity">
+                    Confirm $75 Subscription
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Calculator Logic
+        function calculateSavings(val) {
+            // Assume competitor single session = $20 average
+            const competitorCost = val * 4 * 20; 
+            document.getElementById('competitor-price').innerText = '$' + competitorCost;
+            document.getElementById('savings-amount').innerText = '$' + (competitorCost - 75);
+        }
+
+        // Reserve Class Demo Logic
+        function reserveClass(className) {
+            const alertBox = document.getElementById('booking-alert');
+            const alertMsg = document.getElementById('booking-alert-msg');
+            alertMsg.innerText = `Reserved spot for ${className}! (1 Class per 24hrs reserved)`;
+            alertBox.classList.remove('hidden');
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 4000);
+        }
+
+        // FAQ Toggle Logic
+        function toggleFaq(num) {
+            const ans = document.getElementById(`faq-ans-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            ans.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Modal Logic
+        function openModal() {
+            document.getElementById('signup-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('signup-modal').classList.add('hidden');
+        }
+        function handleSignup(e) {
+            e.preventDefault();
+            alert('🎉 Welcome to Toned & Tanned Oxford! Check your email to complete registration.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
